@@ -1,10 +1,10 @@
-<div class="event-header">
-  <h5>Event Detail</h5>
-  <button (click)="edit()" type="button" class="btn">Edit</button>
-</div>
-<h1>{{(event | async).name}}</h1>
-
 <div *ngIf="!editShow">
+  <div class="event-header">
+    <h5>Event Detail</h5>
+    <button (click)="edit()" type="button" class="btn">Edit</button>
+  </div>
+  <h1>{{(event | async).name}}</h1>
+
   <h3>{{getDate((event | async).date) | date:'fullDate'}}</h3>
   <h4><a href="https://www.google.com/maps/search/{{(event | async).location}}">{{(event | async).location}}</a></h4>
 
@@ -16,4 +16,8 @@
   </ul>
 </div>
 
-<app-edit-event *ngIf="editShow" [event]="(event | async)"></app-edit-event>
+<app-edit-event
+  *ngIf="editShow"
+  [event]="(event | async)"
+  (eventUpdate)="endEdit()"
+></app-edit-event>

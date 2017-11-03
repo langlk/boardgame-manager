@@ -23,8 +23,18 @@ export class EventService {
     this.events.push(event);
   }
 
-  deleteEvent(event) {
-    var eventEntry = this.findEvent(event.$key);
+  updateEvent(localEvent) {
+    var eventEntry = this.findEvent(localEvent.$key);
+    eventEntry.update({
+      date: localEvent.date,
+      name: localEvent.name,
+      location: localEvent.location,
+      gameTypes: localEvent.gameTypes
+    })
+  }
+
+  deleteEvent(localEvent) {
+    var eventEntry = this.findEvent(localEvent.$key);
     eventEntry.remove();
   }
 
