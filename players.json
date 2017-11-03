@@ -2,7 +2,7 @@
   "players": [
     {
       "name": "Ollie Olivier",
-      "gameTypes": ["Board", "Strategy", "Long"],
+      "gameTypes": ["board", "strategy", "long"],
       "daysFree": {
         "sunday": true,
         "monday": false,
@@ -16,7 +16,7 @@
     },
     {
       "name": "Penelope Pennywise",
-      "gameTypes": ["Card", "Deception", "Social", "Short"],
+      "gameTypes": ["card", "deception", "social", "short"],
       "daysFree": {
         "sunday": false,
         "monday": false,
@@ -30,7 +30,7 @@
     },
     {
       "name": "Liv Livingston",
-      "gameTypes": ["Card", "Board", "Party", "Medium", "Social"],
+      "gameTypes": ["card", "board", "party", "medium", "social"],
       "daysFree": {
         "sunday": true,
         "monday": true,

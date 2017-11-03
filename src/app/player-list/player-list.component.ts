@@ -11,9 +11,11 @@ import { PlayerService } from '../player.service';
   styleUrls: ['./player-list.component.css'],
   providers: [PlayerService]
 })
+
 export class PlayerListComponent implements OnInit {
   players: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  editPlayer;
 
   constructor(
     private playerService: PlayerService,
@@ -26,6 +28,10 @@ export class PlayerListComponent implements OnInit {
 
   goTo(player) {
     this.router.navigate(['player', player.$key]);
+  }
+
+  edit(player) {
+    this.editPlayer = player;
   }
 
 }

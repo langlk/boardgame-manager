@@ -1,0 +1,33 @@
+<h4>Edit Player</h4>
+
+<form>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input [(ngModel)]="player.name" name="name" class="form-control">
+  </div>
+
+  <div class="form-group checkboxes">
+    <h5>Days Free:</h5>
+    <div *ngFor="let day of days" (click)="toggleFree(day)">
+      <input *ngIf="player.daysFree[day]" type="checkbox" checked [name]="day">
+      <input *ngIf="!player.daysFree[day]" type="checkbox" [name]="day">
+      <label [for]="day">{{capitalize(day)}}</label>
+    </div>
+  </div>
+
+  <div class="form-group checkboxes">
+    <h5>Preferred Game Types:</h5>
+    <div *ngFor="let gameType of gameTypes" (click)="togglePref(gameType)">
+      <input *ngIf="player.gameTypes.includes(gameType)" type="checkbox" checked name="gameType">
+      <input *ngIf="!player.gameTypes.includes(gameType)" type="checkbox" name="gameType">
+      <label [for]="gameType">{{capitalize(gameType)}}</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="favorite-game">Favorite Game:</label>
+    <input [(ngModel)]="player.favoriteGame" name="favoriteGame" class="form-control">
+  </div>
+
+  <button (click)="update()" type="button" class="btn">Update</button>
+</form>

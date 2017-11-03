@@ -23,4 +23,14 @@ export class PlayerService {
     this.players.push(player);
   }
 
+  updatePlayer(localPlayer) {
+    var playerEntry = this.findPlayer(localPlayer.$key);
+    playerEntry.update({
+      name: localPlayer.name,
+      gameTypes: localPlayer.gameTypes,
+      daysFree: localPlayer.daysFree,
+      favoriteGame: localPlayer.favoriteGame
+    });
+  }
+
 }
