@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from  '@angular/router';
 
 import { Event } from '../event.model';
 import { EventService } from '../event.service';
@@ -22,7 +23,8 @@ export class NewEventComponent implements OnInit {
 
   constructor(
     private playerService: PlayerService,
-    private eventService: EventService
+    private eventService: EventService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -31,6 +33,7 @@ export class NewEventComponent implements OnInit {
   addEvent(name: string, location: string, date: string) {
     var newEvent = new Event(date, name, location, this.gameTypes);
     this.eventService.addEvent(newEvent);
+    this.router.navigate(['events'])
   }
 
   togglePref(gameType: string) {

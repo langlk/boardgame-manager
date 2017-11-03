@@ -3,7 +3,7 @@
 <h3>{{getDate((event | async).date) | date:'fullDate'}}</h3>
 <h4><a href="https://www.google.com/maps/search/{{(event | async).location}}">{{(event | async).location}}</a></h4>
 
-<h3>Game Types:</h3>
+<h4>Game Types:</h4>
 <ul>
   <li *ngFor="let gameType of (event | async).gameTypes">
     {{capitalize(gameType)}}
