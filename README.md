@@ -1,4 +1,47 @@
-# BoardgameManager
+# Boardgame Manager
+
+### _Epicodus Project in Angular, November 3, 2017_
+
+### By Kelsey Langlois
+
+## Description
+
+_This is an app to help manage regular boardgame nights, with notes about attendee's game preferences, preferred days to meet, and favorite games._
+
+## Setup/Installation Requirements
+
+## Specifications
+
+* Player Model
+  * Name
+  * Types of Games preferred
+  * Days of Week free
+  * Favorite Game
+* Components:
+  * About Club
+  * Player List
+  * Player Detail
+  * Add Player
+  * Edit/Delete Player
+
+## Support and contact details
+
+_Please contact [kels.langlois@gmail.com](mailto:kels.langlois@gmail.com) with questions, comments, or issues._
+
+## Technologies Used
+
+* JavaScript
+* TypeScript
+* Node.js
+* Angular
+* Bootstrap
+* Firebase
+
+### License
+
+Copyright (c) 2017 **Kelsey Langlois**
+
+*This software is licensed under the MIT license.*
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
