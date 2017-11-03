@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { PlayerListComponent } from './player-list/player-list.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { AdminComponent } from './admin/admin.component';
+import { NewEventComponent } from './new-event/new-event.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'new-event',
+    component: NewEventComponent
   }
 ];
 
