@@ -9,6 +9,7 @@ import { masterFirebaseConfig } from './api-keys';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
+import { PlayerListComponent } from './player-list/player-list.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -20,7 +21,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    PlayerListComponent
   ],
   imports: [
     BrowserModule,
