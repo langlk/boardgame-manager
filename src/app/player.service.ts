@@ -33,4 +33,9 @@ export class PlayerService {
     });
   }
 
+  deletePlayer(localPlayer) {
+    var playerEntry = this.findPlayer(localPlayer.$key);
+    playerEntry.remove();
+  }
+
 }

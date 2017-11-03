@@ -44,4 +44,10 @@ export class EditPlayerComponent implements OnInit {
   update() {
     this.playerService.updatePlayer(this.player);
   }
+
+  delete() {
+    if(confirm("Are you sure you want to permanently delete this record?")){
+      this.playerService.deletePlayer(this.player);
+    }
+  }
 }
