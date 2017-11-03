@@ -17,7 +17,7 @@
 <h4>Games Enjoyed:</h4>
 <ul>
   <li *ngFor="let type of (player | async).gameTypes">
-    {{type}}
+    {{type | capitalization}}
   </li>
 </ul>
-<h4>Favorite Game: {{(player | async).favoriteGame}}</h4>
+<h4>Favorite Game: <em>{{(player | async).favoriteGame}}</em></h4>
