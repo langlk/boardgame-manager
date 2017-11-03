@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { FirebaseObjectObservable } from 'angularfire2/database';
@@ -13,6 +13,7 @@ import { PlayerService } from '../player.service';
   providers: [PlayerService]
 })
 export class PlayerDetailComponent implements OnInit {
+  @Input() listKey: string;
   playerKey: string;
   player;
   days: string[] = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
@@ -24,9 +25,13 @@ export class PlayerDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.forEach((urlParameters) => {
-      this.playerKey = urlParameters['id'];
-    });
+    if (!this.listKey) {
+      this.route.params.forEach((urlParameters) => {
+        this.playerKey = urlParameters['id'];
+      });
+    } else {
+      this.playerKey = this.listKey;
+    }
     this.player = this.playerService.findPlayer(this.playerKey);
   }
 

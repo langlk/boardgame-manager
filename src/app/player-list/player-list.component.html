@@ -6,4 +6,5 @@
   <div *ngIf="currentRoute === '/admin'">
     <button (click)="edit(player)" type="button" class="btn">Edit</button>
   </div>
+  <app-player-detail *ngIf="currentRoute === '/admin'" [listKey]="player.$key"></app-player-detail>
 </div>

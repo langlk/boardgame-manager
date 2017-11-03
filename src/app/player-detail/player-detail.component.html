@@ -1,5 +1,5 @@
-<h1>{{(player | async).name}}</h1>
-<h3>Schedule:</h3>
+<h1 *ngIf="!listKey">{{(player | async).name}}</h1>
+<h4>Schedule:</h4>
 <table class="table">
   <tr>
     <th *ngFor="let day of days">{{capitalize(day)}}</th>
@@ -8,14 +8,13 @@
     <td *ngFor="let day of days">
       <span *ngIf="(player | async).daysFree[day]" class="free">Free</span>
       <span *ngIf="!(player | async).daysFree[day]" class="busy">Busy</span>
-
     </td>
   </tr>
 </table>
-<h3>Games Enjoyed:</h3>
+<h4>Games Enjoyed:</h4>
 <ul>
   <li *ngFor="let type of (player | async).gameTypes">
     {{type}}
   </li>
 </ul>
-<h3>Favorite Game: {{(player | async).favoriteGame}}</h3>
+<h4>Favorite Game: {{(player | async).favoriteGame}}</h4>
