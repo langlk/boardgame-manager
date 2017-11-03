@@ -2,6 +2,7 @@
 
 .container {
   color: #094361;
+  max-width: 700px;
 }
 
 .checkboxes h5 {

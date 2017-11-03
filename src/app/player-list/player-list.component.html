@@ -1,21 +1,28 @@
-<h1 *ngIf="currentRoute === '/players'">All Players</h1>
-<h2 *ngIf="currentRoute === '/admin'">Manage Players</h2>
+<div class="player-list">
+  <h1 *ngIf="currentRoute === '/players'">All Players</h1>
+  <h2 *ngIf="currentRoute === '/admin'">Manage Players</h2>
 
-<div *ngFor="let player of players | async">
-  <h3 (click)="goTo(player)">{{player.name}}</h3>
-  <div *ngIf="currentRoute === '/admin'">
-    <button
-      *ngIf="editPlayer != player"
-      (click)="edit(player)"
-      type="button" class="btn"
-    >Edit</button>
+  <div *ngFor="let player of players | async" class="panel panel-info">
+    <div class="panel-heading">
+      <h3 (click)="goTo(player)">{{player.name}}</h3>
+      <div *ngIf="currentRoute === '/admin'">
+        <button
+          *ngIf="editPlayer != player"
+          (click)="edit(player)"
+          type="button"
+          class="btn btn-primary"
+        >Edit</button>
+      </div>
+    </div>
+    <div *ngIf="currentRoute === '/admin'" class="panel-body">
+      <app-player-detail
+        *ngIf="editPlayer != player"
+        [listKey]="player.$key"
+      ></app-player-detail>
+      <app-edit-player
+        *ngIf="editPlayer == player"
+        [player]="player"
+      ></app-edit-player>
+    </div>
   </div>
-  <app-player-detail
-    *ngIf="currentRoute === '/admin' && editPlayer != player"
-    [listKey]="player.$key"
-  ></app-player-detail>
-  <app-edit-player
-    *ngIf="currentRoute === '/admin' && editPlayer == player"
-    [player]="player"
-  ></app-edit-player>
 </div>
