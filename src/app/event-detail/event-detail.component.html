@@ -1,11 +1,19 @@
-<h5>Event Detail</h5>
+<div class="event-header">
+  <h5>Event Detail</h5>
+  <button (click)="edit()" type="button" class="btn">Edit</button>
+</div>
 <h1>{{(event | async).name}}</h1>
-<h3>{{getDate((event | async).date) | date:'fullDate'}}</h3>
-<h4><a href="https://www.google.com/maps/search/{{(event | async).location}}">{{(event | async).location}}</a></h4>
 
-<h4>Game Types:</h4>
-<ul>
-  <li *ngFor="let gameType of (event | async).gameTypes">
-    {{capitalize(gameType)}}
-  </li>
-</ul>
+<div *ngIf="!editShow">
+  <h3>{{getDate((event | async).date) | date:'fullDate'}}</h3>
+  <h4><a href="https://www.google.com/maps/search/{{(event | async).location}}">{{(event | async).location}}</a></h4>
+
+  <h4>Game Types:</h4>
+  <ul>
+    <li *ngFor="let gameType of (event | async).gameTypes">
+      {{capitalize(gameType)}}
+    </li>
+  </ul>
+</div>
+
+<app-edit-event *ngIf="editShow" [event]="(event | async)"></app-edit-event>

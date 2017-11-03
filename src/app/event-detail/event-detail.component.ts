@@ -14,6 +14,7 @@ import { EventService } from '../event.service';
 export class EventDetailComponent implements OnInit {
   eventKey: string;
   event;
+  editShow: boolean;
 
   constructor(
     private eventService: EventService,
@@ -26,6 +27,10 @@ export class EventDetailComponent implements OnInit {
       this.eventKey = urlParameters['id'];
     });
     this.event = this.eventService.findEvent(this.eventKey);
+  }
+
+  edit() {
+    this.editShow = true;
   }
 
   getDate(date: string) {

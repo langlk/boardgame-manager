@@ -23,4 +23,9 @@ export class EventService {
     this.events.push(event);
   }
 
+  deleteEvent(event) {
+    var eventEntry = this.findEvent(event.$key);
+    eventEntry.remove();
+  }
+
 }
