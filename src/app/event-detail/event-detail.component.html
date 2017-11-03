@@ -1,7 +1,7 @@
-<div *ngIf="!editShow">
+<div *ngIf="!editShow" class="event-detail">
   <div class="event-header">
     <h5>Event Detail</h5>
-    <button (click)="edit()" type="button" class="btn">Edit</button>
+    <button (click)="edit()" type="button" class="btn btn-primary">Edit</button>
   </div>
   <h1>{{(event | async).name}}</h1>
 
