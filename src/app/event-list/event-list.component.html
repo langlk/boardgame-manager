@@ -1,0 +1,6 @@
+<h1>All Events</h1>
+<h4><a routerLink="/new-event">Add an Event</a></h4>
+
+<div *ngFor="let event of events | async">
+  <h3>{{event.name}}</h3>
+</div>

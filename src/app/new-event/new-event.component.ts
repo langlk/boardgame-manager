@@ -1,15 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Event } from '../event.model';
+import { EventService } from '../event.service';
+import { Player } from '../player.model';
+import { PlayerService } from '../player.service';
+
 @Component({
   selector: 'app-new-event',
   templateUrl: './new-event.component.html',
-  styleUrls: ['./new-event.component.css']
+  styleUrls: ['./new-event.component.css'],
+  providers: [
+    PlayerService,
+    EventService
+  ]
 })
-export class NewEventComponent implements OnInit {
 
-  constructor() { }
+export class NewEventComponent implements OnInit {
+  days: string[] = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  gameTypeNames: string[] = ["board", "card", "short", "medium", "long", "strategy", "social", "deception", "party"];
+  gameTypes: string[] = [];
+
+  constructor(
+    private playerService: PlayerService,
+    private eventService: EventService
+  ) { }
 
   ngOnInit() {
+  }
+
+  addEvent(name: string, location: string, date: string) {
+    var eventDate: Date = new Date(Date.parse(date));
+    var newEvent = new Event(eventDate, name, location, this.gameTypes);
+    this.eventService.addEvent(newEvent);
+  }
+
+  togglePref(gameType: string) {
+    var index = this.gameTypes.indexOf(gameType);
+    if (index >= 0) {
+      this.gameTypes.splice(index, 1);
+    } else {
+      this.gameTypes.push(gameType);
+    }
+  }
+
+  capitalize(str: string) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
 }
