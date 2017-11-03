@@ -34,7 +34,6 @@ export class EditPlayerComponent implements OnInit {
     } else {
       this.player.gameTypes.push(gameType);
     }
-    console.log(this.player);
   }
 
   capitalize(str: string) {

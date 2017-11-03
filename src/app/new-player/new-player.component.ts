@@ -10,16 +10,28 @@ import { PlayerService } from '../player.service';
   providers: [PlayerService]
 })
 export class NewPlayerComponent implements OnInit {
+  days: string[] = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  gameTypeNames: string[] = ["board", "card", "short", "medium", "long", "strategy", "social", "deception", "party"];
+  daysFree = {
+    "sunday": false,
+    "monday": false,
+    "tuesday": false,
+    "wednesday": false,
+    "thursday": false,
+    "friday": false,
+    "saturday": false,
+  }
+  gameTypes: string[] = [];
 
   constructor(private playerService: PlayerService) { }
 
   ngOnInit() {
   }
 
-  addPlayer(name: string, gameTypesString: string, daysFreeString: string, favoriteGame: string) {
-    var gameTypes: string[] = gameTypesString.split(' ');
-    var daysFreeArray: string[] = daysFreeString.split(' ');
-    var daysFree = {
+  addPlayer(name: string, favoriteGame: string) {
+    var newPlayer = new Player(name, this.gameTypes, this.daysFree, favoriteGame);
+    this.playerService.addPlayer(newPlayer);
+    this.daysFree = {
       "sunday": false,
       "monday": false,
       "tuesday": false,
@@ -28,11 +40,28 @@ export class NewPlayerComponent implements OnInit {
       "friday": false,
       "saturday": false,
     }
-    daysFreeArray.forEach((day) => {
-      daysFree[day.toLowerCase()] = true;
-    });
-    var newPlayer = new Player(name, gameTypes, daysFree, favoriteGame);
-    this.playerService.addPlayer(newPlayer);
+    this.gameTypes = [];
+  }
+
+  capitalize(str: string) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  toggleFree(day: string) {
+    if (this.daysFree[day]) {
+      this.daysFree[day] = false;
+    } else {
+      this.daysFree[day] = true;
+    }
+  }
+
+  togglePref(gameType: string) {
+    var index = this.gameTypes.indexOf(gameType);
+    if (index >= 0) {
+      this.gameTypes.splice(index, 1);
+    } else {
+      this.gameTypes.push(gameType);
+    }
   }
 
 }
