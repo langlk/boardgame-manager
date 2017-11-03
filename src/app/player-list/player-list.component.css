@@ -1,3 +1,7 @@
+h1 {
+  margin-bottom: .5em;
+}
+
 .panel-heading {
   display: flex;
   flex-wrap: wrap;
