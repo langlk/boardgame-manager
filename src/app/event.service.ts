@@ -15,6 +15,10 @@ export class EventService {
     return this.events;
   }
 
+  findEvent(key: string) {
+    return this.database.object('events/' + key);
+  }
+
   addEvent(event: Event) {
     this.events.push(event);
   }

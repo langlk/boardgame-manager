@@ -7,6 +7,7 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewEventComponent } from './new-event/new-event.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -36,6 +37,10 @@ const appRoutes: Routes = [
   {
     path: 'events',
     component: EventListComponent
+  },
+  {
+    path: 'event/:id',
+    component: EventDetailComponent
   }
 ];
 

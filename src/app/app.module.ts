@@ -16,6 +16,7 @@ import { AdminComponent } from './admin/admin.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { NewEventComponent } from './new-event/new-event.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     AdminComponent,
     EditPlayerComponent,
     NewEventComponent,
-    EventListComponent
+    EventListComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
