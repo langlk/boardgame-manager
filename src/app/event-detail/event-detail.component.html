@@ -11,7 +11,7 @@
   <h4>Game Types:</h4>
   <ul>
     <li *ngFor="let gameType of (event | async).gameTypes">
-      {{capitalize(gameType)}}
+      {{gameType | capitalization}}
     </li>
   </ul>
 </div>

@@ -35,8 +35,4 @@ export class PlayerDetailComponent implements OnInit {
     this.player = this.playerService.findPlayer(this.playerKey);
   }
 
-  capitalize(str: string) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
 }

@@ -16,7 +16,7 @@
     <div *ngFor="let gameType of gameTypeNames" (click)="togglePref(gameType)">
       <input *ngIf="gameTypes.includes(gameType)" type="checkbox" checked name="gameType">
       <input *ngIf="!gameTypes.includes(gameType)" type="checkbox" name="gameType">
-      <label [for]="gameType">{{capitalize(gameType)}}</label>
+      <label [for]="gameType">{{gameType | capitalization}}</label>
     </div>
   </div>
 

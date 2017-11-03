@@ -43,10 +43,6 @@ export class NewPlayerComponent implements OnInit {
     this.gameTypes = [];
   }
 
-  capitalize(str: string) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
   toggleFree(day: string) {
     if (this.daysFree[day]) {
       this.daysFree[day] = false;

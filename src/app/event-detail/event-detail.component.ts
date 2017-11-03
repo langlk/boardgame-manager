@@ -41,8 +41,4 @@ export class EventDetailComponent implements OnInit {
     return new Date(parseInt(date.slice(0,4)), parseInt(date.slice(5, 7)) - 1, parseInt(date.slice(8,10)));
   }
 
-  capitalize(str: string) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
 }

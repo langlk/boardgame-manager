@@ -2,7 +2,7 @@
 <h4>Schedule:</h4>
 <table class="table">
   <tr>
-    <th *ngFor="let day of days">{{capitalize(day)}}</th>
+    <th *ngFor="let day of days">{{day | capitalization}}</th>
   </tr>
   <tr>
     <td *ngFor="let day of days">

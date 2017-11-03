@@ -12,7 +12,7 @@
       <div *ngFor="let day of days" (click)="toggleFree(day)">
         <input *ngIf="daysFree[day]" type="checkbox" checked [name]="day">
         <input *ngIf="!daysFree[day]" type="checkbox" [name]="day">
-        <label [for]="day">{{capitalize(day)}}</label>
+        <label [for]="day">{{day | capitalization}}</label>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
       <div *ngFor="let gameType of gameTypeNames" (click)="togglePref(gameType)">
         <input *ngIf="gameTypes.includes(gameType)" type="checkbox" checked name="gameType">
         <input *ngIf="!gameTypes.includes(gameType)" type="checkbox" name="gameType">
-        <label [for]="gameType">{{capitalize(gameType)}}</label>
+        <label [for]="gameType">{{gameType | capitalization}}</label>
       </div>
     </div>
   </div>

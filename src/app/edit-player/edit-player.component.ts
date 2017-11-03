@@ -36,10 +36,6 @@ export class EditPlayerComponent implements OnInit {
     }
   }
 
-  capitalize(str: string) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
   update() {
     this.playerService.updatePlayer(this.player);
   }
