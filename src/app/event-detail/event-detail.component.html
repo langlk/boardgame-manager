@@ -1,3 +1,11 @@
-<p>
-  event-detail works!
-</p>
+<h5>Event Detail</h5>
+<h1>{{(event | async).name}}</h1>
+<h3>{{getDate((event | async).date) | date:'fullDate'}}</h3>
+<h4><a href="https://www.google.com/maps/search/{{(event | async).location}}">{{(event | async).location}}</a></h4>
+
+<h3>Game Types:</h3>
+<ul>
+  <li *ngFor="let gameType of (event | async).gameTypes">
+    {{capitalize(gameType)}}
+  </li>
+</ul>

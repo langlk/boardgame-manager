@@ -29,8 +29,7 @@ export class NewEventComponent implements OnInit {
   }
 
   addEvent(name: string, location: string, date: string) {
-    var eventDate: Date = new Date(Date.parse(date));
-    var newEvent = new Event(eventDate, name, location, this.gameTypes);
+    var newEvent = new Event(date, name, location, this.gameTypes);
     this.eventService.addEvent(newEvent);
   }
 
