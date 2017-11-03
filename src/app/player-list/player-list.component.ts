@@ -13,6 +13,7 @@ import { PlayerService } from '../player.service';
 })
 export class PlayerListComponent implements OnInit {
   players: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   constructor(
     private playerService: PlayerService,

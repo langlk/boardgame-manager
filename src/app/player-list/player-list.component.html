@@ -1,5 +1,9 @@
-<h1>All Players</h1>
+<h1 *ngIf="currentRoute === '/players'">All Players</h1>
+<h2 *ngIf="currentRoute === '/admin'">All Players</h2>
 
 <div *ngFor="let player of players | async">
   <h3 (click)="goTo(player)">{{player.name}}</h3>
+  <div *ngIf="currentRoute === '/admin'">
+    <button (click)="edit(player)" type="button" class="btn">Edit</button>
+  </div>
 </div>
