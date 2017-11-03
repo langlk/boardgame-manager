@@ -19,4 +19,8 @@ export class PlayerService {
     return this.database.object('players/' + key);
   }
 
+  addPlayer(player: Player) {
+    this.players.push(player);
+  }
+
 }
