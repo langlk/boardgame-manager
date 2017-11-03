@@ -13,3 +13,15 @@
 .checkboxes label {
   font-weight: normal;
 }
+
+#navbar {
+  background-color: #4f7284;
+}
+
+#navbar a {
+  color: #e8f3f9;
+}
+
+#navbar a:hover {
+  color: #adc3d0;
+}
