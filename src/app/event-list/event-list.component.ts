@@ -27,4 +27,8 @@ export class EventListComponent implements OnInit {
   goTo(event) {
     this.router.navigate(['event', event.$key]);
   }
+
+  getDate(date: string) {
+    return new Date(parseInt(date.slice(0,4)), parseInt(date.slice(5, 7)) - 1, parseInt(date.slice(8,10)));
+  }
 }

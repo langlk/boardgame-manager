@@ -1,0 +1,24 @@
+.events {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .6em;
+}
+
+.panel-title {
+  font-size: 30px;
+}
+
+.panel-info:hover {
+  cursor: pointer;
+  background-color: #f1faff;
+  color: #15587b;
+  border-color: #9dc0c7;
+}
