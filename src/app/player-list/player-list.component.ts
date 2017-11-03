@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { Router } from '@angular/router';
 
 import { Player } from '../player.model';
 import { PlayerService } from '../player.service';
@@ -13,10 +14,17 @@ import { PlayerService } from '../player.service';
 export class PlayerListComponent implements OnInit {
   players: FirebaseListObservable<any[]>;
 
-  constructor(private playerService: PlayerService) { }
+  constructor(
+    private playerService: PlayerService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.players = this.playerService.getPlayers();
+  }
+
+  goTo(player) {
+    this.router.navigate(['player', player.$key]);
   }
 
 }
