@@ -15,4 +15,8 @@ export class PlayerService {
     return this.players;
   }
 
+  findPlayer(key: string) {
+    return this.database.object('players/' + key);
+  }
+
 }

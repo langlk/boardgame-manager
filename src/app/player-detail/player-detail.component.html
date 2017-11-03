@@ -1,3 +1,21 @@
-<p>
-  player-detail works!
-</p>
+<h1>{{(player | async).name}}</h1>
+<h3>Schedule:</h3>
+<table class="table">
+  <tr>
+    <th *ngFor="let day of days">{{capitalize(day)}}</th>
+  </tr>
+  <tr>
+    <td *ngFor="let day of days">
+      <span *ngIf="(player | async).daysFree[day]" class="free">Free</span>
+      <span *ngIf="!(player | async).daysFree[day]" class="busy">Busy</span>
+
+    </td>
+  </tr>
+</table>
+<h3>Games Enjoyed:</h3>
+<ul>
+  <li *ngFor="let type of (player | async).gameTypes">
+    {{type}}
+  </li>
+</ul>
+<h3>Favorite Game: {{(player | async).favoriteGame}}</h3>
