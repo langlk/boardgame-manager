@@ -42,5 +42,19 @@
       },
       "favoriteGame": "Dixit"
     }
+  ],
+  "events": [
+    {
+      "name": "Coup Tournament",
+      "date": "2017-11-7",
+      "location": "Optimism Brewery",
+      "gameTypes": ["card", "deception", "short"]
+    },
+    {
+      "name": "Friday Game Night",
+      "date": "2017-11-10",
+      "location": "Cafe Racer",
+      "gameTypes": ["card", "board", "social", "party"]
+    }
   ]
 }
