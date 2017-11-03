@@ -2,6 +2,11 @@ h1 {
   margin-bottom: .5em;
 }
 
+h3:hover {
+  cursor: pointer;
+  color: #43a4d4;
+}
+
 .panel-heading {
   display: flex;
   flex-wrap: wrap;
