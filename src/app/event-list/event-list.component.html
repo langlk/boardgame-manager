@@ -1,15 +1,28 @@
 <div class="events">
   <div class="event-list-header">
-    <h1>All Events</h1>
+    <h1>Upcoming Events</h1>
     <h4><a routerLink="/new-event">Add an Event</a></h4>
   </div>
-
-  <div *ngFor="let event of events | async" (click)="goTo(event)" class="panel panel-info">
+  <div *ngFor="let event of events | async | eventStatus:'future'" (click)="goTo(event)" class="panel panel-info">
     <div class="panel-heading">
       {{getDate(event.date) | date:'fullDate'}}
     </div>
     <div class="panel-body">
       <h3 class="panel-title">{{event.name}}</h3>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="past-events">
+    <h1>Past Events</h1>
+    <div *ngFor="let event of events | async | eventStatus:'past'" (click)="goTo(event)" class="panel panel-default">
+      <div class="panel-heading">
+        {{getDate(event.date) | date:'fullDate'}}
+      </div>
+      <div class="panel-body">
+        <h3 class="panel-title">{{event.name}}</h3>
+      </div>
     </div>
   </div>
 </div>

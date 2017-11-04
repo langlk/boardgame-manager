@@ -19,6 +19,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { CapitalizationPipe } from './capitalization.pipe';
+import { EventStatusPipe } from './event-status.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -40,7 +41,8 @@ export const firebaseConfig = {
     EventListComponent,
     EventDetailComponent,
     EditEventComponent,
-    CapitalizationPipe
+    CapitalizationPipe,
+    EventStatusPipe
   ],
   imports: [
     BrowserModule,

@@ -16,3 +16,13 @@
   color: #15587b;
   border-color: #9dc0c7;
 }
+
+.past-events {
+  color: #797979;
+}
+
+.panel-default:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+  border-color: #b1b1b1;
+}
