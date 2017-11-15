@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BestDaysPipe implements PipeTransform {
 
-  transform(players, days) {
+  transform(players, days, cutoff = 3) {
     if (days == null || players == null) {
       return []
     }
@@ -18,9 +18,10 @@ export class BestDaysPipe implements PipeTransform {
         }
       });
     });
-    return output.sort(function(a, b) {
+    output.sort(function(a, b) {
       return b[1] - a[1];
     });
+    return output.slice(0, cutoff);
   }
 
 }
