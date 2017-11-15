@@ -20,14 +20,16 @@ export class NewEventComponent implements OnInit {
   days: string[] = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
   gameTypeNames: string[] = ["board", "card", "short", "medium", "long", "strategy", "social", "deception", "party"];
   gameTypes: string[] = [];
+  players;
 
   constructor(
     private playerService: PlayerService,
     private eventService: EventService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
+    this.players = this.playerService.getPlayers();
   }
 
   addEvent(name: string, location: string, date: string) {
