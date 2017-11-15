@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'bestDays'
+  name: 'bestDays',
+  pure: false
 })
 export class BestDaysPipe implements PipeTransform {
 

@@ -22,6 +22,17 @@
     </div>
 
     <div class="col-xs-6 form-group">
+      <div class="alert alert-info">
+        <h5>Suggested Days for this Event:</h5>
+        <p *ngIf="gameTypes.length === 0">
+          Please select game types for suggestions.
+        </p>
+        <ul *ngIf="gameTypes.length > 0">
+          <li *ngFor="let output of players | async | playerInterest:gameTypes | bestDays:days">
+            {{output[0] | capitalization}}
+          </li>
+        </ul>
+      </div>
       <label for="date">Date:</label>
       <input #date type="date" name="date" class="form-control">
     </div>
