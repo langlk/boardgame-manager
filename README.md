@@ -26,7 +26,7 @@ _This is an app to help manage regular boardgame nights. It stores information a
       messagingSenderId: "xxxx"
     };
     ```
-  * Add ```/src/app/api-keys.ts``` to your ```.gitignore``` file.
+  * Ensure that ```/src/app/api-keys.ts``` is included in your ```.gitignore``` file.
   * Return to the [Firebase console](https://console.firebase.google.com/) and select your database, then select "Database" from the left-hand navbar.
   * Select the "Rules" option from the blue navbar near the top of the page.
   * Change both the ```".read"``` and ```".write"``` properties to ```"true"```.
@@ -51,6 +51,7 @@ _This is an app to help manage regular boardgame nights. It stores information a
 * Users can add, edit, and delete players.
 * Event record stores event name, location, date, and game types.
 * Users can add, edit, and delete events.
+* When creating an event, app provides suggested days based on the game types planned.
 
 ## Support and contact details
 
