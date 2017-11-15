@@ -11,8 +11,8 @@
     <input #location name="location" class="form-control">
   </div>
 
-  <div class="row">
-    <div class="col-xs-6 form-group checkboxes">
+  <div class="custom-row">
+    <div class="custom-col-xs-6 form-group checkboxes">
       <h5>Event Game Types:</h5>
       <div *ngFor="let gameType of gameTypeNames" (click)="togglePref(gameType)">
         <input *ngIf="gameTypes.includes(gameType)" type="checkbox" checked name="gameType">
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="col-xs-6 form-group">
+    <div class="custom-col-xs-6 form-group">
       <div class="alert alert-info">
         <h5>Suggested Days for this Event:</h5>
         <p *ngIf="gameTypes.length === 0">
