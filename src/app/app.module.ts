@@ -21,6 +21,7 @@ import { EditEventComponent } from './edit-event/edit-event.component';
 import { CapitalizationPipe } from './capitalization.pipe';
 import { EventStatusPipe } from './event-status.pipe';
 import { PlayerInterestPipe } from './player-interest.pipe';
+import { BestDaysPipe } from './best-days.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -44,7 +45,8 @@ export const firebaseConfig = {
     EditEventComponent,
     CapitalizationPipe,
     EventStatusPipe,
-    PlayerInterestPipe
+    PlayerInterestPipe,
+    BestDaysPipe
   ],
   imports: [
     BrowserModule,
