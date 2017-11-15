@@ -25,3 +25,19 @@
 #navbar a:hover {
   color: #a9cbe8;
 }
+
+@media screen and (max-width: 767px) {
+  #navbar .navbar-header {
+    display: flex;
+    justify-content: center;
+  }
+
+  #navbar .navbar-right {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #navbar a {
+    padding: 2px;
+  }
+}
